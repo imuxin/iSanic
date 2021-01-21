@@ -894,9 +894,12 @@ class Sanic:
         # -------------------------------------------- #
         # Request Middleware
         # -------------------------------------------- #
-        response = await self._run_request_middleware(
-            request, request_name=None
-        )
+        try:
+            response = await self._run_request_middleware(
+                request, request_name=None
+            )
+        except Exception:
+            response = None
         # No middleware results
         if not response:
             try:
@@ -1492,3 +1495,6 @@ class Sanic:
             if force_create:
                 return cls(name)
             raise SanicException(f'Sanic app name "{name}" not found.')
+
+
+iSanic = Sanic

@@ -50,12 +50,12 @@ with open_local(["README.rst"]) as rm:
     long_description = rm.read()
 
 setup_kwargs = {
-    "name": "sanic",
+    "name": "iSanic",
     "version": version,
-    "url": "http://github.com/huge-success/sanic/",
+    "url": "http://github.com/imuxin/iSanic/",
     "license": "MIT",
     "author": "Sanic Community",
-    "author_email": "admhpkns@gmail.com",
+    "author_email": "noreply@iCloud.com",
     "description": (
         "A web server and web framework that's written to go fast. Build fast. Run fast."
     ),
