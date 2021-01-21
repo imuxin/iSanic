@@ -1259,7 +1259,8 @@ class Sanic:
         named_middleware = self.named_request_middleware.get(
             request_name, deque()
         )
-        applicable_middleware = self.request_middleware + named_middleware
+        # applicable_middleware = self.request_middleware + named_middleware
+        applicable_middleware = named_middleware or self.request_middleware
 
         # request.request_middleware_started is meant as a stop-gap solution
         # until RFC 1630 is adopted
